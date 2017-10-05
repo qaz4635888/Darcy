@@ -73,7 +73,7 @@ for(age=0; age<100; age++)
   {
     console.log("it's time to go hell");
   }
-}*/
+}
 
 
 var nameone = "jason", ageone = 18;
@@ -96,4 +96,12 @@ var agecomment = function(name, age)
 var comment = agecomment(nameone, ageone);
 console.log(comment);
 comment = agecomment(nametwo, agetwo);
-console.log(comment);
+console.log(comment);*/
+
+Template.body.events
+({
+  "click SubnitMSG": function()
+  {
+    alert("button  clicked!");
+  }
+});
