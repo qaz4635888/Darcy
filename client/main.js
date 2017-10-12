@@ -100,8 +100,45 @@ console.log(comment);*/
 
 Template.body.events
 ({
-  "click SubnitMSG": function()
+  "click #submitMSG": function(event)
   {
-    alert("button  clicked!");
+    event.preventDefault();
+    var formula = "67/7-150";
+    var results= eval(formula);
+    console.log(results);
+
+    var texts = "this is a string.";
+    var position = texts.indexOf("how much is");
+    console.log(position);
+
+    var length = texts.length;
+    console.log(length);
+    var substring = texts. substring(2);
+    console.log(substring);
+
+    substring = texts.substring(3,10);
+    console.log(substring);
+
+    var ConversationBox = document.getElementById("ConversationBox");
+    var allMSG = ConversationBox.value;
+    //console.log(allMSG);
+    var newMSG = document.getElementById("myMSG").value;
+    //console.log(newMSG);
+
+    newMSG = " \n You : " +newMSG;
+
+    allMSG = allMSG+newMSG;
+    ConversationBox.value = allMSG;
+
+    var newELIZAMSG = "\n ELIZA: who are you?";
+    allMSG = allMSG + newELIZAMSG;
+    ConversationBox.value = allMSG;
+
+
+    //alert("button  clicked!");
+  },
+  "click #resetMSG" : function()
+  {
+      event.preventDefault();
   }
 });
