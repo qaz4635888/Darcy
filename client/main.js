@@ -1,3 +1,5 @@
+var msgRecords = new Mongo.Collection("msgRecords");
+
 /*var HelloMessage ="hellomessage";
  console.log(HelloMessage);
 HelloMessage = "hey alyssa";
@@ -99,11 +101,15 @@ comment = agecomment(nametwo, agetwo);
 console.log(comment);*/
 
 Template.body.events
-({
-  "click #submitMSG": function(event)
+(
+  {
+  "click #submitMsgs": function(event)
   {
     event.preventDefault();
-    var formula = "67/7-150";
+    var msg = document.getElementById("myMsg").value;
+    Meteor.call("msgReceiver", msg);
+
+    /*var formula = "67/7-150";
     var results= eval(formula);
     console.log(results);
 
@@ -135,10 +141,12 @@ Template.body.events
     ConversationBox.value = allMSG;
 
 
-    //alert("button  clicked!");
+    //alert("button  clicked!");*/
   },
-  "click #resetMSG" : function()
+  "click #resetMSG" : function(event)
   {
       event.preventDefault();
+      Meteor.call("resetELIZA");
   }
-});
+}
+);
